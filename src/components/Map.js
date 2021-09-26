@@ -4,6 +4,7 @@ import MapView, { Marker } from 'react-native-maps'
 import { useSelector } from 'react-redux'
 import tw from 'tailwind-react-native-classnames'
 import { selectOrigin } from '../state/slices/navSlices'
+import { GOOGLE_MAPS_APIKEY } from '@env'
 
 const Map = () => {
   const origin = useSelector(selectOrigin)
@@ -11,12 +12,25 @@ const Map = () => {
     <MapView
       style={{ flex: 1 }}
       initialRegion={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        latitude: origin.location.lat,
+        longitude: origin.location.lng,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
       }}
-    ></MapView>
+      zo
+    >
+      {origin.location && (
+        <Marker
+          coordinate={{
+            latitude: origin.location.lat,
+            longitude: origin.location.lng,
+          }}
+          title="Mi ubicación"
+          description=""
+          identifier="origin"
+        />
+      )}
+    </MapView>
   )
 }
 

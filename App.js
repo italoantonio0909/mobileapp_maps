@@ -16,15 +16,15 @@ const App = function () {
         <SafeAreaProvider>
           <Stack.Navigator>
             <Stack.Screen
-              name="EatScreen"
-              component={EatScreen}
+              name="HomeScreen"
+              component={HomeScreen}
               options={{
                 headerShown: false,
               }}
             />
             <Stack.Screen
-              name="HomeScreen"
-              component={HomeScreen}
+              name="EatScreen"
+              component={EatScreen}
               options={{
                 headerShown: false,
               }}

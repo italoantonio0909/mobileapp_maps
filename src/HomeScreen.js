@@ -5,7 +5,7 @@ import NavOPtions from './NavOptions'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { GOOGLE_MAPS_APIKEY } from '@env'
 import { useDispatch } from 'react-redux'
-import { setOrigin } from './state/slices/navSlices'
+import { setDestination, setOrigin } from './state/slices/navSlices'
 import NavFavourites from './components/NavFavourites'
 
 const HomeScreen = function () {
@@ -41,6 +41,8 @@ const HomeScreen = function () {
                 description: data.description,
               })
             )
+
+            dispatch(setDestination(null))
           }}
           returnKeyType="search"
           fetchDetails={true}

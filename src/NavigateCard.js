@@ -9,6 +9,8 @@ import { StyleSheet } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { setDestination } from './state/slices/navSlices'
 import NavFavourites from './components/NavFavourites'
+import { TouchableOpacity } from 'react-native'
+import { Icon } from 'react-native-elements'
 
 const NavigateCard = function ({ navigation }) {
   const dispatch = useDispatch()
@@ -36,6 +38,27 @@ const NavigateCard = function ({ navigation }) {
           />
         </View>
         <NavFavourites />
+      </View>
+      <View
+        style={tw`flex-row bg-white justify-evenly py-2 mt-auto border-t border-gray-100`}
+      >
+        <TouchableOpacity
+          style={tw`flex justify-between flex-row bg-black w-24 px-4 py-3 rounded-full`}
+        >
+          <Icon type="font-awesome" color="white" size={16} name="car" />
+          <Text style={tw`text-white text-center`}>Paseos</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={tw`flex justify-between flex-row w-24 px-4 py-3 rounded-full`}
+        >
+          <Icon
+            type="ionicon"
+            color="black"
+            size={16}
+            name="fast-food-outline"
+          />
+          <Text style={tw`text-black text-center`}>Comida</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   )

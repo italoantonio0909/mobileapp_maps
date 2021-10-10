@@ -40,7 +40,7 @@ const Map = () => {
         />
       )}
 
-      {origin.location && (
+      {origin?.location && (
         <Marker
           coordinate={{
             latitude: origin.location.lat,
@@ -52,7 +52,7 @@ const Map = () => {
         />
       )}
 
-      {destination.location && (
+      {destination?.location && (
         <Marker
           coordinate={{
             latitude: destination.location.lat,

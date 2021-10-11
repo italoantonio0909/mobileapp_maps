@@ -58,8 +58,8 @@ const Map = () => {
             latitude: destination.location.lat,
             longitude: destination.location.lng,
           }}
-          title="Mi ubicación"
-          description=""
+          title="Destino"
+          description={destination.description}
           identifier="destination"
         />
       )}
